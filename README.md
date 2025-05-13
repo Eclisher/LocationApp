@@ -40,3 +40,8 @@ If you don’t have Go installed:
 sudo snap install go --classic
 # OR
 sudo apt update && sudo apt install golang-go
+```
+### 2. 📦 Execute
+```bash
+go run  main.go
+```
