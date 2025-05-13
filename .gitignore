@@ -1,34 +1,44 @@
-# Rust build output
-/target/
-**/*.rs.bk
-
-# Executables and debug logs
-*.exe
+# 🔧 Configuration générale
 *.log
-*.out
-*.a
-*.rlib
-
-# IDE and editor specific
-.DS_Store
+*.lock
+*.tmp
+*.bak
 *.swp
 *.swo
-*.bak
-*.tmp
 
+# 🧪 Fichiers de test ou temporaires
+phpunit.xml
+coverage/
+tests_output/
 
-# VSCode
-.vscode/
-*.code-workspace
-
-# JetBrains (CLion, IntelliJ)
+# 💻 Mac/Linux
+.DS_Store
 .idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
 
-# Rust package manager
-Cargo.lock
+# 🪟 Windows
+Thumbs.db
+desktop.ini
 
-# Snap build if installed
-.snap/
+# 📦 Dépendances (si vous utilisez Composer plus tard)
+vendor/
 
-# Ignore backup files
-*~
+# 🧰 Cache PHP
+.cache/
+.phpunit.result.cache
+
+# 🚀 Build ou déploiement
+build/
+dist/
+
+# 📂 Archives
+*.zip
+*.tar.gz
+*.rar
+
+# 🔐 Secrets
+.env
+.env.local
+.env.*
