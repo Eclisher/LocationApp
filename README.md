@@ -1,8 +1,8 @@
-# RentalApp - Console-Based Rental Management System in Go
+# RentalApp - Console-Based Rental Management System in Rust
 
 ## 📖 Overview
 
-**RentalApp** is a simple command-line application written in Go that simulates a basic rental service system. It allows users to view a list of rentable items, check availability, make reservations by selecting a date and duration, and see their booking history. Each item has an hourly rental rate, and the application ensures proper validation, such as disallowing past reservations.
+**RentalApp** is a simple command-line application written in Rust that simulates a basic rental service system. It allows users to view a list of rentable fr, check availability, make reservations by selecting a date and duration, and see their booking history. Each item has an hourly rental rate, and the application ensures proper validation, such as disallowing past reservations.
 
 ---
 
