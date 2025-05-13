@@ -21,3 +21,27 @@ Welcome to the **Rental Management Console Application**, a simple and interacti
 - ✅ Maintains a reservation history.
 - ✅ Users can view history anytime using a special command.
 - ✅ Error handling for unknown items and invalid inputs.
+
+
+##  How to Compile and Run with Mono (mcs)
+
+###  Prerequisites
+- [Mono](https://www.mono-project.com/download/stable/) installed
+
+###  Compilation
+Suppose your source files are:
+
+- `Program.cs`
+- `Objet.cs`
+- `Reservation.cs`
+- `ServiceReservation.cs`
+
+You can compile them all into a single executable like this:
+
+```bash
+mcs *.cs -out:LocationApp.exe 
+```
+### Execution
+```bash
+mono LocationApp.exe
+```
