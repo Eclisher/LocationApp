@@ -1,42 +1,45 @@
-# RentalApp - Console-Based Rental Management System in Rust
+# 🛠️ Rental System CLI Application
 
-## 📖 Overview
-
-**RentalApp** is a simple command-line application written in Rust that simulates a basic rental service system. It allows users to view a list of rentable fr, check availability, make reservations by selecting a date and duration, and see their booking history. Each item has an hourly rental rate, and the application ensures proper validation, such as disallowing past reservations.
+This is a simple command-line based rental system built with Rust. It allows users to **rent items**, **schedule reservations**, **prevent booking conflicts**, and **view reservation history**.
 
 ---
 
-## 🧰 Features
+## 🚀 Features
 
-- 📋 Display available items with hourly prices
-- 📅 Reserve an item by providing a valid future date and time
-- ⏱️ Specify rental duration in hours
-- 💸 Automatically calculate the total cost based on item rate and duration
-- ❌ Handle errors such as unknown items, past dates, and invalid formats
-- 📜 View booking history at any time with a simple command
+- 🧾 **Available Items List**  
+  Displays a list of objects available for rent, each with an hourly price.
+
+- 📅 **Make a Reservation**  
+  Users can input:
+  - The item name
+  - The desired reservation date and time
+  - The duration (in hours)
+
+- 🚫 **Conflict Prevention**  
+  If a user tries to reserve an object during a time it's already booked, the reservation will be rejected with an appropriate message.
+
+- 🕓 **Past Date Validation**  
+  Reservations cannot be made for past dates.
+
+- 📜 **View Reservation History**  
+  Typing `h` allows the user to view the complete rental history, including:
+  - Object name
+  - Date and time of reservation
+  - Duration
+
+- 💰 **Cost Calculation**  
+  Total cost is calculated as:  
+  `price_per_hour × duration_in_hours`
 
 ---
 
-## 🧾 Available Items for Rent
+## 🧑‍💻 How to Run
 
-| Item         | Price/Hour (Ar) |
-|--------------|-----------------|
-| 🚗 Voiture    | 10,000          |
-| 🍽️ Assiette   | 2,000           |
-| 🚲 Vélo       | 5,000           |
-| 📱 Téléphone  | 15,000          |
-| 💻 Ordinateur | 20,000          |
-| 🏠 Maison     | 50,000          |
+### 1. 🛠 Prerequisites
+- Install Rust: https://www.rust-lang.org/tools/install
 
----
-
-## 🚀 Getting Started
-
-### 1. 📦 Install Go
-
-If you don’t have Go installed:
+### 2. 🔧 Build and Run
 
 ```bash
-sudo snap install go --classic
-# OR
-sudo apt update && sudo apt install golang-go
+cargo build
+cargo run
