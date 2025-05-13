@@ -7,8 +7,8 @@ Welcome to the **Rental Management Console Application**, a simple and interacti
 
 ##  Features
 
-- ✅ Interactive welcome interface in the console.
-- ✅ List of available items to rent with hourly pricing:
+- Interactive welcome interface in the console.
+-  List of available items to rent with hourly pricing:
   - **Car**: 10,000 Ar/hour
   - **Assiette**: 2,000 Ar/hour
   - **Bicycle**: 5,000 Ar/hour
@@ -16,11 +16,11 @@ Welcome to the **Rental Management Console Application**, a simple and interacti
   - **Ordinateur**: 20,000 Ar/hour
   - **Caméra**: 30,000 Ar/hour
   - **Projecteur**: 25,000 Ar/hour
-- ✅ Validates input dates to prevent reservations in the past.
-- ✅ Calculates total rental cost based on duration and item price.
-- ✅ Maintains a reservation history.
-- ✅ Users can view history anytime using a special command.
-- ✅ Error handling for unknown items and invalid inputs.
+-  Validates input dates to prevent reservations in the past.
+-  Calculates total rental cost based on duration and item price.
+-  Maintains a reservation history.
+-  Users can view history anytime using a special command.
+-  Error handling for unknown items and invalid inputs.
 
 
 ##  How to Compile and Run with Mono (mcs)

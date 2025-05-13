@@ -31,19 +31,19 @@ public class ReservationService
     public void ReserverObjet(ObjetLouable objet, DateTime debut, int duree)
     {
         if (debut < DateTime.Now)
-            throw new InvalidOperationException("❌ Impossible de réserver pour une date passée.");
+            throw new InvalidOperationException(" Impossible de réserver pour une date passée.");
 
         if (!EstDisponible(objet, debut, duree))
-            throw new InvalidOperationException("❌ Cet objet est déjà réservé pour ce créneau ou n'est pas encore disponible.");
+            throw new InvalidOperationException(" Cet objet est déjà réservé pour ce créneau ou n'est pas encore disponible.");
 
         reservations.Add(new Reservation(objet, debut, duree));
-        Console.WriteLine("✅ Réservation confirmée !");
+        Console.WriteLine("Réservation confirmée !");
     }
 
     
     public void AfficherHistorique()
     {
-        Console.WriteLine("\n📜 Historique des réservations :");
+        Console.WriteLine("\n Historique des réservations :");
         if (reservations.Count == 0)
         {
             Console.WriteLine("Aucune réservation enregistrée.");

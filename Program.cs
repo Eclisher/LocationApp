@@ -18,7 +18,7 @@ class Program
             new ObjetLouable("Projecteur", 25000),
         };
 
-        Console.WriteLine("🎉 Bienvenue dans notre système de location !");
+        Console.WriteLine(" Bienvenue dans notre système de location !");
         Console.WriteLine("Voici les objets disponibles :");
         foreach (var obj in objets)
         {
@@ -27,12 +27,12 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("\n🔸 Commandes disponibles :");
+            Console.WriteLine("\n Commandes disponibles :");
             Console.WriteLine("  l - Louer un objet");
             Console.WriteLine("  h - Voir l'historique des réservations");
             Console.WriteLine("  q - Quitter");
 
-            Console.Write("👉 Que voulez-vous faire ? ");
+            Console.Write("Que voulez-vous faire ? ");
             string commande = Console.ReadLine().Trim().ToLower();
 
             if (commande == "q")
@@ -61,7 +61,7 @@ class Program
                     }
 
                     if (objet == null)
-                        throw new ArgumentException("❌ Objet inconnu.");
+                        throw new ArgumentException(" Objet inconnu.");
 
                     Console.Write("Entrez la date et l'heure (yyyy-MM-dd HH:mm) : ");
                     string dateStr = Console.ReadLine();
@@ -76,19 +76,19 @@ class Program
                     reservationService.ReserverObjet(objet, debut, duree);
 
                     int cout = objet.PrixParHeure * duree;
-                    Console.WriteLine($"💰 Coût total : {cout} Ar");
+                    Console.WriteLine($"Coût total : {cout} Ar");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"❌ Erreur : {ex.Message}");
+                    Console.WriteLine($" Erreur : {ex.Message}");
                 }
             }
             else
             {
-                Console.WriteLine("❌ Commande inconnue. Veuillez réessayer.");
+                Console.WriteLine(" Commande inconnue. Veuillez réessayer.");
             }
         }
 
-        Console.WriteLine("👋 Merci d’avoir utilisé notre service !");
+        Console.WriteLine(" Merci d’avoir utilisé notre service !");
     }
 }
