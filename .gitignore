@@ -1,0 +1,34 @@
+# Rust build output
+/target/
+**/*.rs.bk
+
+# Executables and debug logs
+*.exe
+*.log
+*.out
+*.a
+*.rlib
+
+# IDE and editor specific
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
+
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (CLion, IntelliJ)
+.idea/
+
+# Rust package manager
+Cargo.lock
+
+# Snap build if installed
+.snap/
+
+# Ignore backup files
+*~

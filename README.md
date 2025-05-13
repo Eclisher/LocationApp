@@ -1,6 +1,6 @@
 # 🛠️ Rental System CLI Application
 
-This is a simple command-line based rental system built with Rust. It allows users to **rent items**, **schedule reservations**, **prevent booking conflicts**, and **view reservation history**.
+This is a simple command-line based rental system built with PHP. It allows users to **rent items**, **schedule reservations**, **prevent booking conflicts**, and **view reservation history**.
 
 ---
 
@@ -36,10 +36,8 @@ This is a simple command-line based rental system built with Rust. It allows use
 ## 🧑‍💻 How to Run
 
 ### 1. 🛠 Prerequisites
-- Install Rust: https://www.rust-lang.org/tools/install
 
 ### 2. 🔧 Build and Run
 
 ```bash
-cargo build
-cargo run
+ 
