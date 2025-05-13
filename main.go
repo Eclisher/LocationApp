@@ -25,7 +25,28 @@ type ReservationService struct {
 	Historique []Reservation
 }
 
+func (rs *ReservationService) EstDisponible(objet ObjetLouable, debut time.Time, duree int) bool {
+	fin := debut.Add(time.Duration(duree) * time.Hour)
+
+	for _, r := range rs.Historique {
+		if r.Objet.Nom != objet.Nom {
+			continue
+		}
+		rDebut := r.Date
+		rFin := rDebut.Add(time.Duration(r.Duree) * time.Hour)
+
+		if debut.Before(rFin) && fin.After(rDebut) {
+			return false
+		}
+	}
+	return true
+}
+
 func (rs *ReservationService) Reserver(objet ObjetLouable, date time.Time, duree int) {
+	if !rs.EstDisponible(objet, date, duree) {
+		fmt.Println("❌ Cet objet est déjà réservé à ce moment. Veuillez choisir un autre créneau.")
+		return
+	}
 	cout := objet.PrixParHeure * duree
 	reservation := Reservation{Objet: objet, Date: date, Duree: duree, Cout: cout}
 	rs.Historique = append(rs.Historique, reservation)
@@ -52,9 +73,9 @@ func main() {
 		{"vélo", 5000},
 		{"téléphone", 15000},
 		{"ordinateur", 20000},
-		{"maison", 50000}
-
+		{"maison", 50000},
 	}
+
 	service := ReservationService{}
 
 	fmt.Println("🎉 Bienvenue dans notre système de location !")
@@ -78,9 +99,9 @@ func main() {
 		}
 
 		var objet *ObjetLouable
-		for _, o := range objets {
-			if strings.ToLower(o.Nom) == choix {
-				objet = &o
+		for i := range objets {
+			if strings.ToLower(objets[i].Nom) == choix {
+				objet = &objets[i]
 				break
 			}
 		}
