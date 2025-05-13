@@ -1,1 +1,0 @@
-/home/harizo/Documents/Location_App/target/debug/location_app: /home/harizo/Documents/Location_App/src/entities.rs /home/harizo/Documents/Location_App/src/main.rs /home/harizo/Documents/Location_App/src/service.rs
