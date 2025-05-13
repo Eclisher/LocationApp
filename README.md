@@ -1,6 +1,5 @@
-# 🛠️ Rental System CLI Application
-
-This is a simple command-line based rental system built with PHP. It allows users to **rent items**, **schedule reservations**, **prevent booking conflicts**, and **view reservation history**.
+#  Rental System CLI Application
+This is a simple command-line rental system built in PHP. It allows users to view a list of rentable objects and reserve them for a specified duration. It also prevents double-booking and displays the reservation history. It allows users to **rent items**, **schedule reservations**, **prevent booking conflicts**, and **view reservation history**.
 
 ---
 
@@ -35,9 +34,10 @@ This is a simple command-line based rental system built with PHP. It allows user
 
 ## 🧑‍💻 How to Run
 
-### 1. 🛠 Prerequisites
-
+### 1. Requirements
+ - PHP 8.0 or later
+ - Terminal access
 ### 2. 🔧 Build and Run
 
 ```bash
- 
+php reservation.php 
