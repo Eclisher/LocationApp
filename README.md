@@ -3,41 +3,41 @@ This is a simple command-line rental system built in PHP. It allows users to vie
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🧾 **Available Items List**  
+-  **Available Items List**  
   Displays a list of objects available for rent, each with an hourly price.
 
-- 📅 **Make a Reservation**  
+-  **Make a Reservation**  
   Users can input:
   - The item name
   - The desired reservation date and time
   - The duration (in hours)
 
-- 🚫 **Conflict Prevention**  
+-  **Conflict Prevention**  
   If a user tries to reserve an object during a time it's already booked, the reservation will be rejected with an appropriate message.
 
-- 🕓 **Past Date Validation**  
+-  **Past Date Validation**  
   Reservations cannot be made for past dates.
 
-- 📜 **View Reservation History**  
+-  **View Reservation History**  
   Typing `h` allows the user to view the complete rental history, including:
   - Object name
   - Date and time of reservation
   - Duration
 
-- 💰 **Cost Calculation**  
+-  **Cost Calculation**  
   Total cost is calculated as:  
   `price_per_hour × duration_in_hours`
 
 ---
 
-## 🧑‍💻 How to Run
+## How to Run
 
 ### 1. Requirements
  - PHP 8.0 or later
  - Terminal access
-### 2. 🔧 Build and Run
+### 2.  Build and Run
 
 ```bash
 php reservation.php 

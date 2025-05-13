@@ -17,7 +17,7 @@ $objets = [
     new Objet("maison", 50000),
 ];
 
-echo "🎉 Bienvenue dans le Système de Location !\nObjets disponibles :\n";
+echo " Bienvenue dans le Système de Location !\nObjets disponibles :\n";
 foreach ($objets as $o) {
     echo "- {$o->nom} ({$o->prixParHeure} Ar/heure)\n";
 }
@@ -41,7 +41,7 @@ while (true) {
     }
 
     if (!$objet) {
-        echo "❌ Objet inconnu.\n";
+        echo "Objet inconnu.\n";
         continue;
     }
 
@@ -49,21 +49,21 @@ while (true) {
     $dateStr = trim(readline());
     $debut = DateTime::createFromFormat('Y-m-d H:i', $dateStr);
     if (!$debut || $debut < new DateTime()) {
-        echo "❌ Date invalide ou dans le passé.\n";
+        echo " Date invalide ou dans le passé.\n";
         continue;
     }
 
     echo "Durée (en heures) : ";
     $duree = intval(trim(readline()));
     if ($duree <= 0) {
-        echo "❌ Durée invalide.\n";
+        echo " Durée invalide.\n";
         continue;
     }
 
     $cout = $service->reserver($objet, $debut, $duree);
     if ($cout === null) {
-        echo "❌ Cet objet est déjà réservé pendant cette période.\n";
+        echo " Cet objet est déjà réservé pendant cette période.\n";
     } else {
-        echo "✅ Réservation réussie ! Coût : {$cout} Ar\n";
+        echo "Réservation réussie ! Coût : {$cout} Ar\n";
     }
 }
