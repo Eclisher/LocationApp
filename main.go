@@ -44,18 +44,18 @@ func (rs *ReservationService) EstDisponible(objet ObjetLouable, debut time.Time,
 
 func (rs *ReservationService) Reserver(objet ObjetLouable, date time.Time, duree int) {
 	if !rs.EstDisponible(objet, date, duree) {
-		fmt.Println("❌ Cet objet est déjà réservé à ce moment. Veuillez choisir un autre créneau.")
+		fmt.Println(" Cet objet est déjà réservé à ce moment. Veuillez choisir un autre créneau.")
 		return
 	}
 	cout := objet.PrixParHeure * duree
 	reservation := Reservation{Objet: objet, Date: date, Duree: duree, Cout: cout}
 	rs.Historique = append(rs.Historique, reservation)
-	fmt.Printf("✅ Réservation confirmée pour %s à %s pendant %d heures.\n", objet.Nom, date.Format("2006-01-02 15:04"), duree)
-	fmt.Printf("💰 Coût total : %d Ar\n", cout)
+	fmt.Printf(" Réservation confirmée pour %s à %s pendant %d heures.\n", objet.Nom, date.Format("2006-01-02 15:04"), duree)
+	fmt.Printf(" Coût total : %d Ar\n", cout)
 }
 
 func (rs *ReservationService) AfficherHistorique() {
-	fmt.Println("\n📜 Historique des réservations :")
+	fmt.Println("\n Historique des réservations :")
 	if len(rs.Historique) == 0 {
 		fmt.Println("Aucune réservation effectuée.")
 		return
@@ -78,7 +78,7 @@ func main() {
 
 	service := ReservationService{}
 
-	fmt.Println("🎉 Bienvenue dans notre système de location !")
+	fmt.Println(" Bienvenue dans notre système de location !")
 	for {
 		fmt.Println("\nVoici les objets disponibles :")
 		for _, o := range objets {
@@ -106,7 +106,7 @@ func main() {
 			}
 		}
 		if objet == nil {
-			fmt.Println("❌ Objet inconnu.")
+			fmt.Println("Objet inconnu.")
 			continue
 		}
 
@@ -115,11 +115,11 @@ func main() {
 		dateStr = strings.TrimSpace(dateStr)
 		date, err := time.Parse("2006-01-02 15:04", dateStr)
 		if err != nil {
-			fmt.Println("❌ Format de date invalide.")
+			fmt.Println(" Format de date invalide.")
 			continue
 		}
 		if date.Before(time.Now()) {
-			fmt.Println("❌ Vous ne pouvez pas réserver une date passée.")
+			fmt.Println(" Vous ne pouvez pas réserver une date passée.")
 			continue
 		}
 
@@ -128,12 +128,12 @@ func main() {
 		dureeStr = strings.TrimSpace(dureeStr)
 		duree, err := strconv.Atoi(dureeStr)
 		if err != nil || duree <= 0 {
-			fmt.Println("❌ Durée invalide.")
+			fmt.Println(" Durée invalide.")
 			continue
 		}
 
 		service.Reserver(*objet, date, duree)
 	}
 
-	fmt.Println("👋 Merci d’avoir utilisé notre service !")
+	fmt.Println(" Merci d’avoir utilisé notre service !")
 }
