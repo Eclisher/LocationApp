@@ -15,6 +15,8 @@ public class Reservation
 
     public int CalculerCout()
     {
+        if (DureeHeures >= 24)
+            throw new InvalidOperationException("Il faut qu'il y ait au moins 24 heures entre deux réservations.");
         return Objet.PrixParHeure * DureeHeures;
     }
 
