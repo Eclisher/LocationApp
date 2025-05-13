@@ -1,23 +1,42 @@
-# LocationApp
-#  Rental Management Console App
+# RentalApp - Console-Based Rental Management System in Go
 
-Welcome to the **Rental Management Console Application**, a simple and interactive system to manage the rental of various objects (e.g. car, plate, bicycle). The application is designed for terminal use, where users can make reservations by selecting available items, specifying the start date/time, and rental duration.
+## 📖 Overview
+
+**RentalApp** is a simple command-line application written in Go that simulates a basic rental service system. It allows users to view a list of rentable items, check availability, make reservations by selecting a date and duration, and see their booking history. Each item has an hourly rental rate, and the application ensures proper validation, such as disallowing past reservations.
 
 ---
 
-##  Features
+## 🧰 Features
 
-- ✅ Interactive welcome interface in the console.
-- ✅ List of available items to rent with hourly pricing:
-  - **Car**: 10,000 Ar/hour
-  - **Assiette**: 2,000 Ar/hour
-  - **Bicycle**: 5,000 Ar/hour
-  - **Tente**: 15,000 Ar/hour
-  - **Ordinateur**: 20,000 Ar/hour
-  - **Caméra**: 30,000 Ar/hour
-  - **Projecteur**: 25,000 Ar/hour
-- ✅ Validates input dates to prevent reservations in the past.
-- ✅ Calculates total rental cost based on duration and item price.
-- ✅ Maintains a reservation history.
-- ✅ Users can view history anytime using a special command.
-- ✅ Error handling for unknown items and invalid inputs.
+- 📋 Display available items with hourly prices
+- 📅 Reserve an item by providing a valid future date and time
+- ⏱️ Specify rental duration in hours
+- 💸 Automatically calculate the total cost based on item rate and duration
+- ❌ Handle errors such as unknown items, past dates, and invalid formats
+- 📜 View booking history at any time with a simple command
+
+---
+
+## 🧾 Available Items for Rent
+
+| Item         | Price/Hour (Ar) |
+|--------------|-----------------|
+| 🚗 Voiture    | 10,000          |
+| 🍽️ Assiette   | 2,000           |
+| 🚲 Vélo       | 5,000           |
+| 📱 Téléphone  | 15,000          |
+| 💻 Ordinateur | 20,000          |
+| 🏠 Maison     | 50,000          |
+
+---
+
+## 🚀 Getting Started
+
+### 1. 📦 Install Go
+
+If you don’t have Go installed:
+
+```bash
+sudo snap install go --classic
+# OR
+sudo apt update && sudo apt install golang-go
