@@ -18,7 +18,7 @@ fn main() {
 
     let mut service = ReservationService::new();
 
-    println!("🎉 Welcome to the Rental System!");
+    println!(" Welcome to the Rental System!");
     println!("Available items:");
     for obj in &objets {
         println!("- {} ({} Ar/hour)", obj.nom, obj.prix_par_heure);
@@ -38,7 +38,7 @@ fn main() {
 
         let objet = objets.iter().find(|o| o.nom.to_lowercase() == nom);
         if objet.is_none() {
-            println!("❌ Unknown item.");
+            println!("Unknown item.");
             continue;
         }
         let objet = objet.unwrap().clone();
@@ -52,7 +52,7 @@ fn main() {
         if let Ok(naive) = date_result {
             let date_heure: DateTime<Local> = Local.from_local_datetime(&naive).unwrap();
             if date_heure < Local::now() {
-                println!("❌ Error: Date is in the past.");
+                println!("Error: Date is in the past.");
                 continue;
             }
 
@@ -63,20 +63,20 @@ fn main() {
             let duree: u32 = match duree_str.trim().parse() {
                 Ok(n) => n,
                 Err(_) => {
-                    println!("❌ Invalid duration.");
+                    println!("Invalid duration.");
                     continue;
                 }
             };
 
             if service.est_disponible(&objet, date_heure, duree) {
                 let cout = service.reserver(objet, date_heure, duree);
-                println!("💰 Total cost: {} Ar", cout);
+                println!("Total cost: {} Ar", cout);
             } else {
-                println!("❌ This item is already booked for that time period.");
+                println!(" This item is already booked for that time period.");
             }
 
         } else {
-            println!("❌ Invalid date format.");
+            println!("Invalid date format.");
         }
 
         print!("Do you want to make another reservation? (y/n): ");
@@ -88,5 +88,5 @@ fn main() {
         }
     }
 
-    println!("👋 Thank you for using our service!");
+    println!(" Thank you for using our service!");
 }
